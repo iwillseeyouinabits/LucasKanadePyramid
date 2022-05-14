@@ -41,25 +41,18 @@ def lucus(img1, img2, flowMap):
     cv.imwrite(flowMap, gray)
 
 
-def createClowMaps(n):
+def createClowMaps(startInd, endInd):
     writeIter = 0
-    for i in range(n):
+    for i in range(startInd, endInd+1):
         num = str(i)
-        file1 = str("0"*(6-len(num))) + num + "_10"
-        file2 = str("0"*(6-len(num))) + num + "_11"
+        file1 = str("0"*(6-len(num))) + num
         path1 = "image_2/" + file1 + ".png"
         path2 = "image_3/" + file1 + ".png"
-        path3 = "image_2/" + file2 + ".png"
-        path4 = "image_3/" + file2 + ".png"
         print(path1)
         print(path2)
         print("______________")
         lucus(path1, path2, "FlowMap/flowMapV" + str(writeIter) + ".png")
         writeIter += 1
-        lucus(path3, path4, "FlowMap/flowMapV" + str(writeIter) + ".png")
-        print(path3)
-        print(path4)
-        print("______________")
         writeIter += 1
 
 def compare(disp, groundTruth):
@@ -80,6 +73,6 @@ def compare(disp, groundTruth):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    createClowMaps(200)
+    createClowMaps(5867, 7480)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
