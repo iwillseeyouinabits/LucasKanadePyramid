@@ -64,6 +64,7 @@ def createClowMaps(n):
 
 def compare(disp, groundTruth):
     #comment to help chris learn git
+    #comment number 2 for chris git
     d = cv.imread(disp)
     gt = cv.imread(groundTruth)
     num = 0
