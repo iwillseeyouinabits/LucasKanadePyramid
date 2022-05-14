@@ -63,6 +63,7 @@ def createClowMaps(n):
         writeIter += 1
 
 def compare(disp, groundTruth):
+    #comment to help chris learn git
     d = cv.imread(disp)
     gt = cv.imread(groundTruth)
     num = 0
