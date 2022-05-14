@@ -62,6 +62,22 @@ def createClowMaps(n):
         print("______________")
         writeIter += 1
 
+def compare(disp, groundTruth):
+    d = cv.imread(disp)
+    gt = cv.imread(groundTruth)
+    num = 0
+    den = 0
+    for x in range(len(d)):
+        for y in range(len(d[x])):
+            pxd = d[x][y][0]
+            if not pxd == 0:
+                pxgt = gt[x][y][0]
+                num += (pxd-pxgt)**2
+                den += 1
+    return num/den
+
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     createClowMaps(200)
